@@ -1,5 +1,5 @@
-![CardinalKit Logo](../assets/ck-header-light.png#gh-light-mode-only)
-![CardinalKit Logo](../assets/ck-header-light.png#gh-dark-mode-only)
+![CardinalKit Logo](https://raw.githubusercontent.com/CardinalKit/.github/main/assets/ck-header-light.png#gh-light-mode-only)
+![CardinalKit Logo](https://raw.githubusercontent.com/CardinalKit/.github/main/assets/ck-header-dark.png#gh-dark-mode-only)
 
 ### Open-source Framework for Rapid Development of Modern Interoperable Digital Health Applications
 

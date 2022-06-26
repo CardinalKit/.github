@@ -1,4 +1,5 @@
-<img src="https://raw.githubusercontent.com/CardinalKit/CardinalKit/master/CardinalKit-Web-Assets/header.png" />
+![CardinalKit Logo](../assets/ck-header-light.png#gh-light-mode-only)
+![CardinalKit Logo](../assets/ck-header-light.png#gh-dark-mode-only)
 
 ### Open-source Framework for Rapid Development of Modern Interoperable Digital Health Applications
 

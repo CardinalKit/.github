@@ -8,6 +8,7 @@ SPDX-License-Identifier: MIT
 
 -->
 
-# .github
+# CardinalKit .github Contributors
 
-This repository serves as a collection of default community health files, GitHub Action workflows, templates, and information for the CardinalKit organization.
+* [Vishnu Ravi](https://github.com/vishnuravi)
+* [Paul Schmiedmayer](https://github.com/PSchmiedmayer)

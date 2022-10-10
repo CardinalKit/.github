@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-name: Generate DocC Documentation
+name: Generate DocC Documentation Using the Swift Package Manager
 
 on:
   workflow_call:
@@ -15,6 +15,11 @@ on:
         description: 'Name of the Swift Package Manager target using DocC'
         required: true
         type: string
+      usexcodebuild:
+        description: 'A flag indicating if the DocC documentation should be generated using DocC'
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   generate:
@@ -36,11 +41,25 @@ jobs:
           echo "inputs.targetname: ${{ inputs.targetname }}"
           echo "github.event.repository.name: ${{ github.event.repository.name }}"
     - name: Generate Documentation
+      if: !inputs.usexcodebuild
       run: |
           swift package --allow-writing-to-directory ./docs \
             generate-documentation --target ${{ inputs.targetname }} \
             --disable-indexing \
             --transform-for-static-hosting \
+            --hosting-base-path ${{ github.event.repository.name }} \
+            --output-path ./docs
+    - name: Generate Documentation Using Xcodebuild
+      if: inputs.usexcodebuild
+      run: |
+          xcodebuild docbuild \
+            -scheme ${{ inputs.targetname }} \
+            -sdk iphonesimulator \
+            -destination "name=iPhone 14 Pro Max" \
+            -derivedDataPath .xcodebuild/ \
+            CODE_SIGNING_ALLOWED="NO"
+          xcrun docc process-archive \
+            transform-for-static-hosting .xcodebuild/Build/Products/Debug-iphonesimulator/${{ inputs.targetname }}.doccarchive \
             --hosting-base-path ${{ github.event.repository.name }} \
             --output-path ./docs
     - uses: actions/upload-pages-artifact@v1

@@ -17,7 +17,7 @@ on:
         type: string
         default: '.'
       packagename:
-        description: 'Name of the package passed to Xcode on macOS builds. Required for generating a test coverage or testing the DoC documentation generation'
+        description: 'Name of the package required for generating a test coverage'
         required: true
         type: string
       test:

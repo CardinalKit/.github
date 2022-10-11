@@ -31,6 +31,7 @@ jobs:
       with:
         xcode-version: latest-stable
     - uses: actions/cache@v2
+      if: inputs.usexcodebuild == false
       with:
         path: .build
         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
@@ -41,7 +42,7 @@ jobs:
           echo "inputs.targetname: ${{ inputs.targetname }}"
           echo "github.event.repository.name: ${{ github.event.repository.name }}"
     - name: Generate Documentation
-      if: !inputs.usexcodebuild
+      if: inputs.usexcodebuild == false
       run: |
           swift package --allow-writing-to-directory ./docs \
             generate-documentation --target ${{ inputs.targetname }} \
@@ -53,7 +54,7 @@ jobs:
       if: inputs.usexcodebuild
       run: |
           xcodebuild docbuild \
-            -scheme ${{ inputs.targetname }} \
+            -scheme ${{ inputs.targetname }}-Package \
             -sdk iphonesimulator \
             -destination "name=iPhone 14 Pro Max" \
             -derivedDataPath .xcodebuild/ \

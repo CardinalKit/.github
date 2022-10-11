@@ -54,8 +54,8 @@ jobs:
       with:
         token: ${{ secrets.token }}
         commit-message: Update dependencies
-        title: Update dependencies
-        body: Update the Swift Package dependencies.
+        title: Update Dependencies
+        body: Update the Swift Package Manager dependencies.
         delete-branch: true
         base: develop
         branch: bots/update-dependencies

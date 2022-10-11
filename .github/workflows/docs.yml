@@ -31,6 +31,7 @@ jobs:
       with:
         xcode-version: latest-stable
     - uses: actions/cache@v2
+      if: inputs.usexcodebuild == false
       with:
         path: .build
         key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
@@ -52,6 +53,7 @@ jobs:
     - name: Generate Documentation Using Xcodebuild
       if: inputs.usexcodebuild
       run: |
+          xcodebuild docbuild -list
           xcodebuild docbuild \
             -scheme ${{ inputs.targetname }}-Package \
             -sdk iphonesimulator \

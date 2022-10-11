@@ -53,7 +53,7 @@ jobs:
       if: inputs.usexcodebuild
       run: |
           xcodebuild docbuild \
-            -scheme ${{ inputs.packagename }}-Package \
+            -scheme ${{ inputs.targetname }}-Package \
             -sdk iphonesimulator \
             -destination "name=iPhone 14 Pro Max" \
             -derivedDataPath .xcodebuild/ \

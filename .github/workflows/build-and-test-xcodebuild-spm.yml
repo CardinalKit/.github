@@ -16,8 +16,13 @@ on:
         required: false
         type: string
         default: '.'
-      packagename:
-        description: 'Name of the package passed to xcodebuild on macOS builds. Required for generating a test coverage or testing the DoC documentation generation'
+      scheme:
+        description: 'Name of the Scheme used to build the Swift Package'
+        required: false
+        type: string
+        default: ''
+      targetname:
+        description: 'Name of the target in the Swift Package. Required for generating a test coverage.'
         required: true
         type: string
 
@@ -37,19 +42,22 @@ jobs:
       run: |
           xcodebuild -version
           swift --version
-          echo "inputs.packagename: ${{ inputs.packagename }}"
           echo "inputs.path: ${{ inputs.path }}"
+          echo "inputs.scheme: ${{ inputs.scheme }}"
+          echo "inputs.targetname: ${{ inputs.targetname }}"
     - name: Build and Test
       run: |
+          INPUT_SCHEME=${{ inputs.scheme }}
+          SCHEME=${INPUT_SCHEME:-"${{ inputs.targetname }}-Package"}
           xcodebuild test \
-            -scheme ${{ inputs.packagename }}-Package \
+            -scheme $SCHEME \
             -sdk iphonesimulator \
             -destination "name=iPhone 14 Pro Max" \
             -enableCodeCoverage YES \
-            -resultBundlePath ${{ inputs.packagename }}.xcresult \
+            -resultBundlePath ${{ inputs.targetname }}.xcresult \
             CODE_SIGNING_ALLOWED="NO"
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ inputs.packagename }}.xcresult
-        path: ${{ inputs.packagename }}.xcresult
+        name: ${{ inputs.targetname }}.xcresult
+        path: ${{ inputs.targetname }}.xcresult

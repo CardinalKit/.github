@@ -11,6 +11,11 @@ name: Generate DocC Documentation Using the Swift Package Manager
 on:
   workflow_call:
     inputs:
+      scheme:
+        description: 'Name of the Scheme used to build the documentation'
+        required: false
+        type: string
+        default: ''
       targetname:
         description: 'Name of the Swift Package Manager target using DocC'
         required: true
@@ -39,6 +44,7 @@ jobs:
       run: |
           xcodebuild -version
           swift --version
+          echo "inputs.scheme: ${{ inputs.scheme }}"
           echo "inputs.targetname: ${{ inputs.targetname }}"
           echo "github.event.repository.name: ${{ github.event.repository.name }}"
     - name: Generate Documentation
@@ -53,8 +59,10 @@ jobs:
     - name: Generate Documentation Using Xcodebuild
       if: inputs.usexcodebuild
       run: |
+          INPUT_SCHEME=${{ inputs.scheme }}
+          SCHEME=${INPUT_SCHEME:-"${{ inputs.targetname }}-Package"}
           xcodebuild docbuild \
-            -scheme ${{ inputs.targetname }}-Package \
+            -scheme $SCHEME \
             -sdk iphonesimulator \
             -destination "name=iPhone 14 Pro Max" \
             -derivedDataPath .xcodebuild/ \

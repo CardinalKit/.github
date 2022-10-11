@@ -17,7 +17,6 @@ We provide you with a suite of tools to build your digital health experience fro
 
 - [iOS Template Application](https://github.com/cardinalkit/cardinalkit)
 - [Android Template Application](https://github.com/cardinalkit/cardinalkit-android)
-- [Web Dashboard](https://github.com/cardinalkit/cardinalkit-web-dashboard)
 
 For more information, check out our website at [cardinalkit.org](https://cardinalkit.org) or our [getting started](https://cardinalkit.org/cardinalkit-docs/) guide!
 

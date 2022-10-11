@@ -41,7 +41,7 @@ jobs:
           echo "inputs.targetname: ${{ inputs.targetname }}"
           echo "github.event.repository.name: ${{ github.event.repository.name }}"
     - name: Generate Documentation
-      if: !inputs.usexcodebuild
+      if: inputs.usexcodebuild == false
       run: |
           swift package --allow-writing-to-directory ./docs \
             generate-documentation --target ${{ inputs.targetname }} \

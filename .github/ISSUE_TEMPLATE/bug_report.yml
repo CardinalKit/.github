@@ -8,7 +8,7 @@
 
 name: 🐛 Bug report
 description: File a bug report
-title: ""
+title: "🐛 Bug report: Remove this title with a descriptive title."
 labels: ["bug"]
 body:
   - type: markdown

@@ -8,7 +8,7 @@
 
 name: 🏎 Minor feature request
 description: Suggest an improvement for this project
-title: ""
+title: "🏎 Minor feature request: Remove this title with a descriptive title."
 labels: ["enhancement", "minor version bump"]
 body:
   - type: markdown

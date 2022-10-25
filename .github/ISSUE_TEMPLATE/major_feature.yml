@@ -8,7 +8,7 @@
 
 name: 🚀 Major feature request
 description: Suggest a new idea for this project
-title: ""
+title: "🚀 Major feature request: Remove this title with a descriptive title."
 labels: ["enhancement", "major version bump"]
 body:
   - type: markdown

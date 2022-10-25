@@ -7,3 +7,10 @@
 #
 
 blank_issues_enabled: false
+contact_links:
+  - name: Discussions & Support
+    url: https://github.com/orgs/CardinalKit/discussions
+    about: We use GitHub Discussions for any discussions and support.
+  - name: Security & Vulnerability-related Issues
+    url: https://github.com/CardinalKit/.github/blob/main/SECURITY.md
+    about: For security and vulnerability-related issues, please refer to our Security Policy.

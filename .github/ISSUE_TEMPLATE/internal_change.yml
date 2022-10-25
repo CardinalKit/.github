@@ -8,7 +8,7 @@
 
 name: 💾 Internal change
 description: Suggest an internal improvement for this project
-title: ""
+title: "💾 Internal change: Remove this title with a descriptive title."
 labels: ["enhancement"]
 body:
   - type: markdown

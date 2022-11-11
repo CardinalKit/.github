@@ -54,6 +54,7 @@ jobs:
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO
     - name: Upload Artifact
+      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.scheme }}.xcresult

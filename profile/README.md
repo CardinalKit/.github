@@ -18,8 +18,8 @@ We provide you with a suite of tools to build your digital health experience fro
 - [iOS Template Application](https://github.com/cardinalkit/cardinalkit)
 - [Android Template Application](https://github.com/cardinalkit/cardinalkit-android)
 
-[!IMPORTANT]
-CardinalKit template applications are now in maintenance mode. We recommend that new projects try [Stanford Spezi](https://github.com/StanfordSpezi), the next generation of CardinalKit.
+> [!NOTE]  
+> We recommend that new projects try [Stanford Spezi](https://github.com/StanfordSpezi), the next generation of CardinalKit, which introduces a standards-based modular approach for building digital health applications.
 
 ![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/CardinalKit/.github/main/assets/ck-footer-light.png#gh-light-mode-only)
 ![Stanford Byers Center for Biodesign Logo](https://raw.githubusercontent.com/CardinalKit/.github/main/assets/ck-footer-dark.png#gh-dark-mode-only)

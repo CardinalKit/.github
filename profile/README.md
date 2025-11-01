@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
 ### Open-source Framework for Rapid Development of Modern Interoperable Digital Health Applications
 
 > [!IMPORTANT]  
-> CardinalKit is **no longer actively developed.** We recommend all new projects build upon our [Stanford Spezi](https://github.com/StanfordSpezi) open-source framework, which introduces a standards-based modular approach for building digital health applications on multiple platforms.
+> CardinalKit is currently in a planning phase, targetting a significant upgrade and refactor to V2.0. If you would like to join the 2.0 team, please reach out to team@cardinalkit.org  
 
 We provide you with a suite of tools to build your digital health experience from the ground up, from the template applications to storing collected data in the cloud.
 

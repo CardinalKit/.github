@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17620129.svg)](https://doi.org/10.5281/zenodo.17620129)
+
+
 <!--
 
 This source file is part of the CardinalKit open-source project
@@ -17,6 +20,13 @@ SPDX-License-Identifier: MIT
 > CardinalKit is currently in a planning phase, targetting a significant upgrade and refactor to V2.0. If you would like to join the 2.0 team, please reach out to team@cardinalkit.org  
 
 We provide you with a suite of tools to build your digital health experience from the ground up, from the template applications to storing collected data in the cloud.
+
+## How to Cite
+
+If you use CardinalKit in your research, please cite:
+
+Hittle, M. (2025). *CardinalKit: An Open, Interoperable Framework for Digital Health Application Development* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.17620129
+
 
 - [iOS Template Application](https://github.com/cardinalkit/cardinalkit)
 - [Android Template Application](https://github.com/cardinalkit/cardinalkit-android)
